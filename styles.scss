@@ -5,9 +5,23 @@
   align-items: $align;
 }
 
+@mixin for-tablet {
+  @media (min-width: 481px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+
 $body-color: #F6F5EB;
 $font-color: #E45757;
 $font-color-black: #303030;
+$secondary-color: #E9BD24;
 
 
 * {
@@ -26,6 +40,7 @@ body {
   @include flex(column, center, center);
   font-size: 3em;
   font-weight: bolder;
+  margin-top: 5rem;
 
   p {
     font-weight: bold;
@@ -38,12 +53,19 @@ body {
   gap: 1rem;
   margin-top: 1rem;
 
+  @include for-mobile {margin-top: 4rem;}
+  @include for-tablet {margin-top: 4rem;}
+
   .input-group {
-    @include flex(column, center, flex-end);
+    @include flex(column, center, flex-start);
   }
   label {
-    font-size: .2em;
+    font-size: .25em;
     margin-bottom: .2rem;
+
+    @include for-mobile {font-size: .35em;}
+    @include for-tablet {font-size: .35em;}
+
   }
 
   button {
@@ -51,7 +73,19 @@ body {
     border: 3px solid $font-color;
     color: $font-color;
     font-weight: bold;
-    padding: .4rem 1rem;
+    padding: .5rem 1rem;
+    margin-top: 1.2rem;
+
+    @include for-mobile {
+      padding: .85rem 1.35rem;
+      font-size: .5em;
+      margin-top: 1.6rem;
+    }
+    @include for-tablet {
+      padding: .85rem 1.35rem;
+      font-size: .5em;
+      margin-top: 1.6rem;
+    }
   }
 
   button:hover {
@@ -62,16 +96,25 @@ body {
 
 #player-number-select {
   border: 3px solid $font-color;
-  text-align: right;
+  padding: .5rem;
   color: $font-color-black;
+
+  @include for-mobile {
+    padding: .85rem;
+    font-size: .5em;
+  }
+  @include for-tablet {
+    padding: .85rem;
+    font-size: .5em;
+  }
 }
 
 #player-number-select:focus {
-  border: 3px solid blue;
+  border: 3px solid $secondary-color;
   outline: none;
 }
 #player-number-select:active {
-  border: 3px solid blue;
+  border: 3px solid $secondary-color;
   outline: none;
 }
 

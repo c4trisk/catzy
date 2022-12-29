@@ -17,6 +17,7 @@ body {
   align-items: center;
   font-size: 3em;
   font-weight: bolder;
+  margin-top: 5rem;
 }
 #site-title p {
   font-weight: bold;
@@ -31,22 +32,57 @@ body {
   gap: 1rem;
   margin-top: 1rem;
 }
+@media (max-width: 480px) {
+  #player-select {
+    margin-top: 4rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #player-select {
+    margin-top: 4rem;
+  }
+}
 #player-select .input-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 #player-select label {
-  font-size: 0.2em;
+  font-size: 0.25em;
   margin-bottom: 0.2rem;
+}
+@media (max-width: 480px) {
+  #player-select label {
+    font-size: 0.35em;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #player-select label {
+    font-size: 0.35em;
+  }
 }
 #player-select button {
   background-color: #F6F5EB;
   border: 3px solid #E45757;
   color: #E45757;
   font-weight: bold;
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1.2rem;
+}
+@media (max-width: 480px) {
+  #player-select button {
+    padding: 0.85rem 1.35rem;
+    font-size: 0.5em;
+    margin-top: 1.6rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #player-select button {
+    padding: 0.85rem 1.35rem;
+    font-size: 0.5em;
+    margin-top: 1.6rem;
+  }
 }
 #player-select button:hover {
   background-color: #E45757;
@@ -55,17 +91,29 @@ body {
 
 #player-number-select {
   border: 3px solid #E45757;
-  text-align: right;
+  padding: 0.5rem;
   color: #303030;
+}
+@media (max-width: 480px) {
+  #player-number-select {
+    padding: 0.85rem;
+    font-size: 0.5em;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #player-number-select {
+    padding: 0.85rem;
+    font-size: 0.5em;
+  }
 }
 
 #player-number-select:focus {
-  border: 3px solid blue;
+  border: 3px solid #E9BD24;
   outline: none;
 }
 
 #player-number-select:active {
-  border: 3px solid blue;
+  border: 3px solid #E9BD24;
   outline: none;
 }
 
