@@ -11,6 +11,12 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     console.log(numberOfPlayers.value)
 } )
+function SetupPlayerNameEntryFields() {
+    // Create number of text boxes based on selected number of players
+    for (let i = 0; i < numberOfPlayers; i++) {
+        // Can we add the amount of input text boxes based on numberOfPlayers?
+    }
+}
 
 function SetupPlayerData() {
     if (numberOfPlayers > 6) {
@@ -21,15 +27,11 @@ function SetupPlayerData() {
         for (let i = 0; i < numberOfPlayers; i++) {
             // Create an array of objects (playerName and totalScore) with player name and set score to 0 for each player. Array index = player (index 0 = player 1 etc.)
             // TODO: Get player names from text boxes
-            playerData[i] = {playerName:"Player#" + (i+1), totalScore:0}
+            playerData[i] = {playerName:playerNames[i], totalScore:0}
             // Create a score chart as an array of objects that is score cathegories. Array index = player (index 0 = player 1 etc.)
             scoreChart[i] = {aces:0, twos:0, threes:0, fours:0, fives:0, sixes:0, bonus:0, onePair:0, twoPairs:0, threeOfAKind:0, fourOfAKind:0, smallStraight:0, largeStraight:0, fullHouse:0, chance:0, yahtzee:0}
         }
     }
-}
-
-function SetupPlayerNameEntryFields() {
-    // Create number of text boxes based on selected number of players
 }
 
 function SetPlayerAsComputer() {
@@ -72,7 +74,7 @@ function ShowFinalScore() {
 
 }
 
-ThrowDice()
+/* ThrowDice()
 console.table(dice)
 DiceArrayToValueArray(...dice)
-console.table(diceValues)
+console.table(diceValues) */
