@@ -31,3 +31,10 @@ body {
     font-size: .5em;
   }
 }
+
+.player-select {
+  label {
+    font-size: .5em;
+  }
+  @include flex(column, center, flex-start);
+}

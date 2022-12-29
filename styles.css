@@ -21,4 +21,14 @@ body {
 .site-title p {
   font-weight: bold;
   font-size: 0.5em;
+}
+
+.player-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.player-select label {
+  font-size: 0.5em;
 }/*# sourceMappingURL=styles.css.map */

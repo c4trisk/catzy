@@ -1,10 +1,16 @@
-let numberOfPlayers
+let numberOfPlayers = document.querySelector('#player-number-select')
+let form = document.querySelector('#player-select')
 const playerData = []
 const scoreChart = []
 const playerIsComputer = []
 let currentPlayer
 const dice = []
 const diceValues = [0,0,0,0,0,0]
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    console.log(numberOfPlayers.value)
+} )
 
 function SetupPlayerData() {
     if (numberOfPlayers > 6) {
