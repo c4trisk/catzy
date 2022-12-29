@@ -7,6 +7,7 @@
 
 $body-color: #F6F5EB;
 $font-color: #E45757;
+$font-color-black: #303030;
 
 
 * {
@@ -21,7 +22,7 @@ body {
   color: $font-color;
 }
 
-.site-title {
+#site-title {
   @include flex(column, center, center);
   font-size: 3em;
   font-weight: bolder;
@@ -32,9 +33,54 @@ body {
   }
 }
 
-.player-select {
-  label {
-    font-size: .5em;
+#player-select {
+  @include flex(row, center, center);
+  gap: 1rem;
+  margin-top: 1rem;
+
+  .input-group {
+    @include flex(column, center, flex-end);
   }
-  @include flex(column, center, flex-start);
+  label {
+    font-size: .2em;
+    margin-bottom: .2rem;
+  }
+
+  button {
+    background-color: $body-color;
+    border: 3px solid $font-color;
+    color: $font-color;
+    font-weight: bold;
+    padding: .4rem 1rem;
+  }
+
+  button:hover {
+    background-color: $font-color;
+    color: $body-color;
+  }
+}
+
+#player-number-select {
+  border: 3px solid $font-color;
+  text-align: right;
+  color: $font-color-black;
+}
+
+#player-number-select:focus {
+  border: 3px solid blue;
+  outline: none;
+}
+#player-number-select:active {
+  border: 3px solid blue;
+  outline: none;
+}
+
+
+
+
+
+
+
+.display-none {
+  display: none;
 }

@@ -8,16 +8,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="site-title">
+  <div id="site-title">
     <h1>CATZY</h1>
     <p>SELECT NUMBER OF PLAYERS</p>
     <form id="player-select">
-      <!-- <label for="player-number-select">Select between 2 and 6 players</label> -->
-      <input type="number" min="2" max="6" id="player-number-select">
+      <div class="input-group">
+        <label for="player-number-select">2-6 players</label>
+        <input type="number" min="2" max="6" id="player-number-select">
+      </div>
       <button>PLAY</button>
     </form>
   </div>
-  
+  <div class="player-names">
+
+  </div>
 
   <script src="script.js"></script>
 </body>
