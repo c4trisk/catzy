@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F6F5EB;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #E45757;
+}
+
+.site-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bolder;
+}
+.site-title p {
+  font-weight: bold;
+  font-size: 0.5em;
+}
+
+.player-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.player-select label {
+  font-size: 0.5em;
+}/*# sourceMappingURL=styles.css.map */
