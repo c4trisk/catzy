@@ -68,33 +68,35 @@ body {
 
   }
 
-  button {
-    background-color: $body-color;
-    border: 3px solid $font-color;
-    color: $font-color;
-    font-weight: bold;
-    padding: .5rem 1rem;
-    margin-top: 1.2rem;
+  
+}
 
-    @include for-mobile {
-      padding: .85rem 1.35rem;
-      font-size: .5em;
-      margin-top: 1.6rem;
-    }
-    @include for-tablet {
-      padding: .85rem 1.35rem;
-      font-size: .5em;
-      margin-top: 1.6rem;
-    }
+.btn-play {
+  background-color: $body-color;
+  border: 3px solid $font-color;
+  color: $font-color;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  margin-top: 1.2rem;
+
+  @include for-mobile {
+    padding: .85rem 1.35rem;
+    font-size: .5em;
+    margin-top: 1.6rem;
   }
-
-  button:hover {
-    background-color: $font-color;
-    color: $body-color;
+  @include for-tablet {
+    padding: .85rem 1.35rem;
+    font-size: .5em;
+    margin-top: 1.6rem;
   }
 }
 
-#player-number-select {
+.btn-play:hover {
+  background-color: $font-color;
+  color: $body-color;
+}
+
+.input-red {
   border: 3px solid $font-color;
   padding: .5rem;
   color: $font-color-black;
@@ -109,21 +111,65 @@ body {
   }
 }
 
-#player-number-select:focus {
+.input-red:focus {
   border: 3px solid $secondary-color;
+  background-color: white;
+  font-weight: bold;
   outline: none;
 }
-#player-number-select:active {
+.input-red:active {
   border: 3px solid $secondary-color;
+  background-color: white;
+  font-weight: bold;
   outline: none;
 }
 
 
+//--------------------------
 
+#player-names {
+  @include flex(column, center, center);
 
+  h2 {
+    font-size: 4em;
+  }
+
+  .input-group {
+    @include flex(column, flex-start, flex-start);
+    width: 49%;
+    margin-bottom: 1rem;
+  }
+
+  .input-red {
+    width: 100%;
+  }
+
+  .player-names-col {
+    margin-top: 4rem;
+    width: 50vw;
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;  
+    gap: 2%;
+
+  }
+}
+
+.label-big {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-bottom: .3rem;
+}
+
+.game-name {
+  font-weight: bold;
+  align-self: flex-end;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
 
 
 
 .display-none {
-  display: none;
+  display: none !important;
 }

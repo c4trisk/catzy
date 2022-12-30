@@ -14,13 +14,43 @@
     <form id="player-select">
       <div class="input-group">
         <label for="player-number-select">2-6 players </label>
-        <input type="number" min="2" max="6" id="player-number-select">
+        <input type="number" min="2" max="6" id="player-number-select" class="input-red">
       </div>
-      <button>PLAY</button>
+      <button class="btn-play">PLAY</button>
     </form>
   </div>
-  <div class="player-names">
-
+  <div id="player-names" class="display-none">
+    <p class="game-name">CATZY</p>
+    <h2>WHO R U GUYS?</h2>
+    <form class="player-names-form">
+      <div class="player-names-col">
+        <div class="input-group" id="player-name0">
+          <label for="player-name-input0" class="label-big">Player #1</label>
+          <input type="text" id="player-name-input0" class="input-red">
+        </div>
+        <div class="input-group" id="player-name1">
+          <label for="player-name-input1" class="label-big">Player #2</label>
+          <input type="text" id="player-name-input1" class="input-red">
+        </div>
+        <div class="input-group" id="player-name2">
+          <label for="player-name-input2" class="label-big">Player #3</label>
+          <input type="text" id="player-name-input2" class="input-red">
+        </div>
+        <div class="input-group" id="player-name3">
+          <label for="player-name-input3" class="label-big">Player #4</label>
+          <input type="text" id="player-name-input3" class="input-red">
+        </div>
+        <div class="input-group" id="player-name4">
+          <label for="player-name-input4" class="label-big">Player #5</label>
+          <input type="text" id="player-name-input4" class="input-red">
+        </div>
+        <div class="input-group" id="player-name5">
+          <label for="player-name-input5" class="label-big">Player #6</label>
+          <input type="text" id="player-name-input5" class="input-red">
+        </div>
+      </div>
+      <button class="btn-play">PLAY</button>
+    </form>
   </div>
 
   <script src="script.js"></script>

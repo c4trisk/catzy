@@ -11,8 +11,12 @@ numberOfPlayerForm.addEventListener('submit', e => {
     e.preventDefault()
     console.log(numberOfPlayers.value)
 
+    // Funkar inte pga display: flex BUT WHY
     const siteTitleDiv = document.querySelector('#site-title')
     siteTitleDiv.classList.add('display-none')
+
+    const playerNamesDiv = document.querySelector('#player-names')
+    playerNamesDiv.classList.remove('display-none')
 
 } )
 
