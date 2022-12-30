@@ -31,7 +31,7 @@ function SetupPlayerData() {
             // TODO: Get player names from text boxes
             playerData[i] = {playerName:playerNames[i], totalScore:0}
             // Create a score chart as an array of objects that is score cathegories. Array index = player (index 0 = player 1 etc.)
-            scoreChart[i] = {aces:0, twos:0, threes:0, fours:0, fives:0, sixes:0, bonus:0, twoPairs:0, threeOfAKind:0, fourOfAKind:0, smallStraight:0, largeStraight:0, fullHouse:0, chance:0, yahtzee:0}
+            scoreChart[i] = {aces:0, twos:0, threes:0, fours:0, fives:0, sixes:0, bonus:0, twoPairs:0, threeOfAKind:0, fourOfAKind:0, smallStraight:0, largeStraight:0, fullHouse:0, yahtzee:0, chance:0}
         }
     }
 }
@@ -68,30 +68,77 @@ function DiceArrayToValueArray(a, b, c, d, e) {
     diceValues[e-1] = diceValues[e-1]+1
 }
 
-function CheckDiceCategories() {
-    let diceCombinationStacks = [0, 0, 0, 0, 0, 0]
-    let stackCount = 0
+function CheckThrowResults() {
+    const diceCategoriesAndPoints = [["aces",0], ["twos",0], ["threes",0], ["fours",0], ["fives",0], ["sixes",0], ["bonus",0], ["twoPairs",0], ["threeOfAKind",0], ["fourOfAKind",0], ["smallStraight",0], ["largeStraight",0], ["fullHouse",0], ["yahtzee",0], ["chance",0]]
+    let diceSum = dice.reduce((partialSum, a) => partialSum + a, 0)
+    let pairCount = 0
+    const diceThrowResult = {}
+    //let diceCategoriesReceived = {aces:0, twos:0, threes:0, fours:0, fives:0, sixes:0, bonus:0, twoPairs:0, threeOfAKind:0, fourOfAKind:0, smallStraight:0, largeStraight:0, fullHouse:0, chance:0, yahtzee:0}
 
-    diceValues.forEach (checkDice)
-    function checkDice (value, index, array) {
+    diceValues.forEach (checkValues)
+    function checkValues (value, index, array) {
+        diceCategoriesAndPoints[index][1] = (index + 1) * value // Set values for upper section (aces, twos, threes, fours, fives and sixes)
         switch(value) {
             case 2:
-                diceCombinationStacks[index] = diceCombinationStacks[index]+2
+                diceCategoriesAndPoints[7][1] = diceCategoriesAndPoints[7][1] + diceSum         // Add points to twoPairs, will check later if pairCount is 2.
+                pairCount = pairCount + 1
+                if (diceCategoriesAndPoints[8][1] > 0) {
+                    diceCategoriesAndPoints[12][1] = 25         // Set points for fullHouse
+                }
                 break
             case 3:
-                diceCombinationStacks[index] = diceCombinationStacks[index]+3
+                diceCategoriesAndPoints[8][1] = diceSum         // Set points for threeOfAKind
+                if (diceCategoriesAndPoints[7][1] > 0) {
+                    diceCategoriesAndPoints[12][1] = 25         // Set points for fullHouse
+                }
                 break
             case 4:
-                
+                diceCategoriesAndPoints[9][1] = diceSum         // Set points for fourOfAKind
                 break
             case 5:
-
+                diceCategoriesAndPoints[13][1] = 50             // Set points for Yahtzee
                 break
-            default:
-                console.log("He valt int ti na")
         }
     }
 
+    if (pairCount < 2) {                            // Check if we have twoPairs, of not - no points
+        diceCategoriesAndPoints[7][1] = 0
+    }
+
+    CheckForStraight(...dice.sort(function(a, b){return a - b}))    // Sort dice in ascending order and check for straight
+    function CheckForStraight(a, b, c, d, e) {
+        if (e == d+1 & d == c+1 & c == b+1 || d == c+1 & c == b+1 & b == a+1) {
+            diceCategoriesAndPoints[10][1] = 30         // Set points for smallStraight
+        }
+        if (e == d+1 & d == c+1 & c == b+1 & b == a+1) {
+            diceCategoriesAndPoints[11][1] = 40         // Set points for largeStraight
+        }
+    }
+
+    CompileResult()                                     // Gather category options for return
+    // TODO: Finish the following:
+/*     function CompileResult() {
+        const resultArray = []
+        const myArray = [a, b, c, d, e]
+        myArray.forEach(myFunction)
+        function myFunction(value, index, array) {
+            if (value > 0) {
+                resultArray.push(value)
+            }
+        }
+        return(resultArray)
+    } */
+}
+
+function CheckForBonus() {
+    if ((diceCategoriesAndPoints[0][1] +            // Set bonus to 35 if sum of upper section > 63
+    diceCategoriesAndPoints[1][1] +
+    diceCategoriesAndPoints[2][1] +
+    diceCategoriesAndPoints[3][1] +
+    diceCategoriesAndPoints[4][1] +
+    diceCategoriesAndPoints[5][1] +) > 63) {
+        scoreChart.bonus = 35
+    }
 }
 
 /* function CalculatePoints() {
