@@ -112,14 +112,12 @@ body {
 .input-red:focus {
   border: 3px solid #E9BD24;
   background-color: white;
-  font-weight: bold;
   outline: none;
 }
 
 .input-red:active {
   border: 3px solid #E9BD24;
   background-color: white;
-  font-weight: bold;
   outline: none;
 }
 
