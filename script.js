@@ -1,5 +1,5 @@
-let numberOfPlayers = 6 // document.querySelector('#player-number-select')
-//let form = document.querySelector('#player-select')
+let numberOfPlayers = document.querySelector('#player-number-select')
+let form = document.querySelector('#player-select')
 const playerNames = []
 const playerData = []
 const scoreChart = []
@@ -8,10 +8,10 @@ let currentPlayer
 const dice = []
 const diceValues = [0,0,0,0,0,0]
 
-/* form.addEventListener('submit', e => {
+form.addEventListener('submit', e => {
     e.preventDefault()
     console.log(numberOfPlayers.value)
-} ) */
+} )
 
 function SetupPlayerNameEntryFields() {
     // Create number of text boxes based on selected number of players
@@ -257,7 +257,7 @@ function ShowFinalScore() {
 
 
 //Only for testing - remove the fillowing
-playerNames.push("Josh", "Andrew", "Phil", "Steve", "Motown", "Funk")
+/* playerNames.push("Josh", "Andrew", "Phil", "Steve", "Motown", "Funk")
 SetupPlayerData()
 SetStartingPlayer()
 ThrowDice()
@@ -265,4 +265,4 @@ console.table(dice)
 DiceArrayToValueArray(...dice)
 console.table(diceValues)
 //CalculatePoints()
-console.table(scoreChart)
+console.table(scoreChart) */
