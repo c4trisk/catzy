@@ -27,7 +27,7 @@ function SetupPlayerNameEntryFields() {
 }
 
 function SetupPlayerData() {
-    if (numberOfPlayers > 5) {
+    if (numberOfPlayers > 5 || numberOfPlayers < 1) {
         return false
     } else {
         for (let i = 0; i <= numberOfPlayers; i++) {
