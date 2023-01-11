@@ -1,5 +1,3 @@
-let numberOfPlayers = document.querySelector('#player-number-select')
-let numberOfPlayerForm = document.querySelector('#player-select')
 const playerData = []
 const scoreChart = []
 const playerIsComputer = []
@@ -7,23 +5,36 @@ let currentPlayer
 const dice = []
 const diceValues = [0,0,0,0,0,0]
 
-numberOfPlayerForm.addEventListener('submit', e => {
+//CATHJAS TESTVARIABLER
+let numberOfPlayers
+
+
+// SELECT NUMBER OF PLAYERS
+document.querySelector('#player-select').addEventListener('submit', e => {
     e.preventDefault()
-    console.log(numberOfPlayers.value)
 
-    // Funkar inte pga display: flex BUT WHY
-    const siteTitleDiv = document.querySelector('#site-title')
-    siteTitleDiv.classList.add('display-none')
+    numberOfPlayers = document.querySelector('#player-number-select').value
 
-    const playerNamesDiv = document.querySelector('#player-names')
-    playerNamesDiv.classList.remove('display-none')
+    document.querySelector('#site-title').classList.add('display-none')
+    document.querySelector('#player-names').classList.remove('display-none')
+    
+    SetupPlayerNameEntryFields()
 
-} )
+    return numberOfPlayers
+})
+
+
+// NAME PLAYERS
+document.querySelector('#player-names').addEventListener('submit', e => {
+    e.preventDefault()
+
+})
 
 function SetupPlayerNameEntryFields() {
     // Create number of text boxes based on selected number of players
     for (let i = 0; i < numberOfPlayers; i++) {
-        // Can we add the amount of input text boxes based on numberOfPlayers?
+        
+        document.querySelector('#player-name' + i).classList.remove('display-none')
     }
 }
 

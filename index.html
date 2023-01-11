@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="site-title">
+  <!-- SELECT NUMBER OF PLAYERS -->
+  <div id="site-title" class="display-none">
     <h1>CATZY</h1>
     <p>SELECT NUMBER OF PLAYERS</p>
     <form id="player-select">
@@ -19,38 +20,43 @@
       <button class="btn-play">PLAY</button>
     </form>
   </div>
+  <!-- NAME PLAYERS -->
   <div id="player-names" class="display-none">
     <p class="game-name">CATZY</p>
-    <h2>WHO R U GUYS?</h2>
-    <form class="player-names-form">
+    <h2>NAME YOURSELVES</h2>
+    <div class="player-names-form">
       <div class="player-names-col">
-        <div class="input-group" id="player-name0">
+        <div class="input-group display-none" id="player-name0">
           <label for="player-name-input0" class="label-big">Player #1</label>
           <input type="text" id="player-name-input0" class="input-red">
         </div>
-        <div class="input-group" id="player-name1">
+        <div class="input-group display-none" id="player-name1">
           <label for="player-name-input1" class="label-big">Player #2</label>
           <input type="text" id="player-name-input1" class="input-red">
         </div>
-        <div class="input-group" id="player-name2">
+        <div class="input-group display-none" id="player-name2">
           <label for="player-name-input2" class="label-big">Player #3</label>
           <input type="text" id="player-name-input2" class="input-red">
         </div>
-        <div class="input-group" id="player-name3">
+        <div class="input-group display-none" id="player-name3">
           <label for="player-name-input3" class="label-big">Player #4</label>
           <input type="text" id="player-name-input3" class="input-red">
         </div>
-        <div class="input-group" id="player-name4">
+        <div class="input-group display-none" id="player-name4">
           <label for="player-name-input4" class="label-big">Player #5</label>
           <input type="text" id="player-name-input4" class="input-red">
         </div>
-        <div class="input-group" id="player-name5">
+        <div class="input-group display-none" id="player-name5">
           <label for="player-name-input5" class="label-big">Player #6</label>
           <input type="text" id="player-name-input5" class="input-red">
         </div>
       </div>
       <button class="btn-play">PLAY</button>
-    </form>
+    </div>
+  </div>
+  <!-- GAME INTERFACE -->
+  <div id="game-interface">
+    
   </div>
 
   <script src="script.js"></script>
